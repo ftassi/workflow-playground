@@ -1,0 +1,12 @@
+name: Deploy
+
+on:
+  push:
+    tags:
+
+jobs:
+  update_infrastructure:
+    name: Update ECS infrastructure
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
