@@ -22,13 +22,12 @@ jobs:
           semver_only: true
           initial_version: v0.0.0
           with_initial_version: true
+          token: ${{ secrets.PATNAME }}
       - uses: actions-ecosystem/action-bump-semver@v1
         id: bump-semver
         with:
           current_version: ${{ steps.get-latest-tag.outputs.tag }}
           level: major
       - uses: actions-ecosystem/action-push-tag@v1
-        env:
-          GITHUB_TOKEN: thisIsWrongAndShouldFail
         with:
           tag: ${{ steps.bump-semver.outputs.new_version }}
