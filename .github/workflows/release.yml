@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          token: ${{ secrets.PATNAME }}
+          token: ${{ secrets.PAT }}
       - uses: actions-ecosystem/action-get-latest-tag@v1
         id: get-latest-tag
         with:
